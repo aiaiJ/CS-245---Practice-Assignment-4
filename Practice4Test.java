@@ -4,7 +4,7 @@ public class Practice4Test {
 	protected Queue queue;
 	protected Stack stack;
 	protected final int size_of_test = 500;
-	protected final String[] expressionList = {"level", "Anna", "A nut for a jar of tuna!"};
+	protected final String[] expressionList = {"level", "Anna", "a nut for a jar of tuna!"};
 	protected final String[] wrongList = {"first", "Matter fact", "Landed on his hip and busted his lip"};
 	
 	
@@ -26,6 +26,8 @@ public class Practice4Test {
 	
 	public boolean isPalindrome(String item) {
 		clearData();
+		item = item.replaceAll("[^a-zA-Z ]", "").toLowerCase();
+		item = item.replaceAll("\\s+","");
 		for (int i = 0; i < item.length(); i++) {
 			stack.push(item.substring(i, i+1));
 			queue.enqueue(item.substring(i, i+1));
@@ -55,7 +57,6 @@ public class Practice4Test {
 			if (queue.empty())
 				grade += 5;
 			System.out.println("[+" + grade + "%] Queue and Stack declared correctly.");
-	
 			// First tests: is the queue correct? Is the stack correct?
 			String first = "first";
 			String second = "second";
