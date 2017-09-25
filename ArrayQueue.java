@@ -1,3 +1,8 @@
+/**
+
+@author: Aiai Jin
+
+**/
 import java.util.Arrays; 
 public class ArrayQueue implements Queue{
 

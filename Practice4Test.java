@@ -1,4 +1,8 @@
+/**
 
+@author: Aiai Jin
+
+**/
 public class Practice4Test {
 	
 	protected Queue queue;
@@ -26,7 +30,9 @@ public class Practice4Test {
 	
 	public boolean isPalindrome(String item) {
 		clearData();
+		//I replace all the punctuations to white spaces and change capitals to lower cases.
 		item = item.replaceAll("[^a-zA-Z ]", "").toLowerCase();
+		//delete all the white spaces tabs...
 		item = item.replaceAll("\\s+","");
 		for (int i = 0; i < item.length(); i++) {
 			stack.push(item.substring(i, i+1));
